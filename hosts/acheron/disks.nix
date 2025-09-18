@@ -48,7 +48,7 @@ in {
 
   fileSystems = {
     "/nix".neededForBoot = true;
-    "/persist".neededForBoot = true;
+    "/nix/persist".neededForBoot = true;
   };
 
   disko.devices = {
@@ -96,16 +96,16 @@ in {
                   mountpoint = "/";
                   mountOptions = ["compress=zstd" "noatime"];
                 };
-                "/home" = {
-                  mountpoint = "/home";
-                  mountOptions = ["compress=zstd" "noatime"];
-                };
                 "/nix" = {
                   mountpoint = "/nix";
                   mountOptions = ["compress=zstd" "noatime"];
                 };
-                "/persist" = {
-                  mountpoint = "/persist";
+                "/nix/persist" = {
+                  mountpoint = "/nix/persist";
+                  mountOptions = ["compress=zstd" "noatime"];
+                };
+                "/home" = {
+                  mountpoint = "/home";
                   mountOptions = ["compress=zstd" "noatime"];
                 };
               };
