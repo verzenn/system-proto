@@ -7,7 +7,7 @@
 }: {
   imports =
     [
-      #"${modules}/boot/grub"
+      "${modules}/boot/grub"
       #"${modules}/boot/plymouth"
 
       "${modules}/hardware/networkmanager"
