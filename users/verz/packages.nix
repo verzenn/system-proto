@@ -1,9 +1,11 @@
 {
+  pkgs,
   host,
   inputs,
   ...
 }: {
   home.packages = [
-    inputs.flow.packages.${host.system}.default
+    inputs.zen.packages.${host.system}.default
+    pkgs.xwayland-satellite
   ];
 }

@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -11,9 +12,7 @@ in {
 
       profileExtra = lib.mkDefault ''
         if [[ $(tty) == /dev/tty1 ]] && [[ -t 1 ]]; then
-        	if uwsm check may-start; then
-        		exec uwsm start default
-        	fi
+          ${pkgs.niri-unstable}/bin/niri-session -l
         fi
       '';
     };

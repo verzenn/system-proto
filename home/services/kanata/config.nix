@@ -44,7 +44,7 @@ in
       	a (t! charmod a lmet)
       	s (t! charmod s lalt)
       	d (t! charmod d lsft)
-      	f (t! charmod f rctl)
+      	f (t! charmod f lctl)
 
       	j (t! charmod j rctl)
       	k (t! charmod k rsft)

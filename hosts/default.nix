@@ -73,6 +73,8 @@
     };
   };
 
+  documentation.enable = false |> lib.mkDefault;
+
   nixpkgs.config.allowUnfree = true |> lib.mkDefault;
 
   environment = {

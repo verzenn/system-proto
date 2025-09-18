@@ -3,16 +3,10 @@
   config,
   ...
 }: let
-  moduleName = "kitty";
+  moduleName = "swww";
 in {
   config = lib.mkIf config.modules.${moduleName}.enable {
-    programs.kitty = {
-      enable = true |> lib.mkForce;
-      settings = {
-        cursor_trail = 1;
-        confirm_os_window_close = 0;
-      };
-    };
+    services.swww.enable = true;
   };
 
   options.modules.${moduleName}.enable = lib.mkOption {

@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   config,
@@ -23,10 +24,10 @@ in {
 
     home = {
       packages = with pkgs; [
-        kanata-with-cmd
         playerctl
         brightnessctl
         wireplumber
+        kanata-with-cmd
       ];
     };
   };

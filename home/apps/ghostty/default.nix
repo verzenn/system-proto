@@ -1,16 +1,19 @@
 {
+  host,
+  inputs,
   lib,
   config,
   ...
 }: let
-  moduleName = "kitty";
+  moduleName = "ghostty";
 in {
   config = lib.mkIf config.modules.${moduleName}.enable {
-    programs.kitty = {
-      enable = true |> lib.mkForce;
+    programs.ghostty = {
+      enable = true;
+      enableZshIntegration = false;
+
       settings = {
-        cursor_trail = 1;
-        confirm_os_window_close = 0;
+        theme = "nord";
       };
     };
   };

@@ -2,6 +2,11 @@
   description = ''''; # TODO
 
   inputs = {
+    swww = {
+      url = "github:lgfae/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     discord = {
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,12 +17,30 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flow = {
-      url = "github:averzive/flow-browser-flake";
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/hyprland";
+    zen = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    kanata = {
+      url = "github:jtroo/kanata";
+      flake = false;
+    };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";

@@ -1,11 +1,13 @@
 {
+  inputs,
   system,
   pkgs,
   config,
   ...
 }: {
   imports = [
-    "${system}/bootloader/grub"
+    "${system}/boot/grub"
+    "${system}/boot/plymouth"
 
     "${system}/hardware/networkmanager"
     "${system}/hardware/pipewire"
@@ -18,11 +20,21 @@
     "${system}/services/polkit"
     "${system}/services/firewall"
 
-    "${system}/desktop/hyprland"
+    "${system}/desktop/niri"
 
     ./disks.nix
     ./hardware.nix
   ];
+
+  fonts.fontconfig.enable = true;
+  services.upower.enable = true;
+
+  time.timeZone = "Europe/Prague";
+
+  services.xserver.xkb = {
+    layout = "us,cz";
+    variant = ",qwerty";
+  };
 
   users.users.verz.extraGroups = [
     "networkmanager"
@@ -32,12 +44,6 @@
     "input"
 
     "wheel"
-  ];
-
-  programs.niri.enable = true;
-  environment.systemPackages = with pkgs; [
-    fuzzel
-    alacritty
   ];
 
   # kanata
