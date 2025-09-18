@@ -10,33 +10,40 @@ in {
   imports = [inputs.disko.nixosModules.default];
 
   boot.initrd.postDeviceCommands = lib.mkAfter ''
-    mkdir -p /btrfs_tmp
-    mount "${root}" /btrfs_tmp
+    mkdir -p /mnt
+    mount "${root}" /mnt
 
-    mkdir -p /btrfs_tmp/roots
+    mkdir -p /mnt/roots
 
-    if [[ -d /btrfs_tmp/roots/root ]]; then
-        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/roots/root)" "+%Y-%m-%d_%H:%M:%S")
-        mv /btrfs_tmp/roots/root "/btrfs_tmp/roots/root-$timestamp"
+    if [[ -d /mnt/roots/root ]]; then
+        lastRoot=$(ls /mnt/roots/ | grep -E '^root-[0-9]+$' | sed 's/root-//' | sort -n | tail -1)
+
+        if [[ -z "$lastRoot" ]]; then
+            lastRoot=0
+        fi
+
+        newRoot=$((lastRoot + 1))
+
+        mv /mnt/roots/root "/mnt/roots/root-$newRoot"
     fi
 
     delete_subvolume_recursively() {
         IFS=$'\n'
 
         for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
-            delete_subvolume_recursively "/btrfs_tmp/$i"
+            delete_subvolume_recursively "/mnt/$i"
         done
 
         btrfs subvolume delete "$1"
     }
 
-    for i in $(find /btrfs_tmp/roots/ -maxdepth 1 -name "root-*" -mtime +30); do
-        delete_subvolume_recursively "$i"
+    for old in $(ls /mnt/roots/ | grep -E '^root-[0-9]+$' | sed 's/root-//' | sort -n | head -n -30); do
+        delete_subvolume_recursively "/mnt/roots/root-$old"
     done
 
-    btrfs subvolume create /btrfs_tmp/roots/root
+    btrfs subvolume create /mnt/roots/root
 
-    umount /btrfs_tmp
+    umount /mnt
   '';
 
   fileSystems = {
