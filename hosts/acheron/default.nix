@@ -1,30 +1,32 @@
 {
+  modules,
   inputs,
-  system,
   pkgs,
   config,
   ...
 }: {
-  imports = [
-    "${system}/boot/grub"
-    "${system}/boot/plymouth"
+  imports =
+    [
+      #"${modules}/boot/grub"
+      #"${modules}/boot/plymouth"
 
-    "${system}/hardware/networkmanager"
-    "${system}/hardware/pipewire"
-    "${system}/hardware/bluetooth"
+      "${modules}/hardware/networkmanager"
+      #"${modules}/hardware/pipewire"
+      #"${modules}/hardware/bluetooth"
 
-    "${system}/hardware/graphics/opengl"
-    "${system}/hardware/graphics/nvidia"
-    "${system}/hardware/graphics/intel"
+      #"${modules}/hardware/graphics/opengl"
+      #"${modules}/hardware/graphics/nvidia"
+      #"${modules}/hardware/graphics/intel"
 
-    "${system}/services/polkit"
-    "${system}/services/firewall"
+      #"${modules}/services/polkit"
+      #"${modules}/services/firewall"
 
-    "${system}/desktop/niri"
-
-    ./disks.nix
-    ./hardware.nix
-  ];
+      #"${sysiem}/desktop/niri"
+    ]
+    ++ [
+      ./disks.nix
+      ./hardware.nix
+    ];
 
   fonts.fontconfig.enable = true;
   services.upower.enable = true;

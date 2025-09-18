@@ -1,6 +1,6 @@
 {
-  home,
   users,
+  modules,
   meta,
   inputs,
   lib,
@@ -22,7 +22,8 @@
                   modules = [users];
 
                   extraSpecialArgs = {
-                    inherit home username hostname host inputs;
+                    inherit username hostname host inputs;
+                    modules = modules.home;
                   };
                 };
               }

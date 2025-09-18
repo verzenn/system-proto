@@ -1,6 +1,4 @@
 {
-  description = ''''; # TODO
-
   inputs = {
     swww = {
       url = "github:lgfae/swww";
@@ -56,18 +54,22 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs:
-    import ./outputs {
-      inherit inputs;
-      meta = import ./meta.nix;
+  description = ''''; # TODO
 
+  outputs = inputs:
+    import ./parts {
       hosts = ./hosts;
       users = ./users;
 
-      system = ./system;
-      home = ./home;
+      modules = {
+        system = ./modules/system;
+        home = ./modules/home;
+      };
+
+      meta = import ./meta.nix;
+      inherit inputs;
     };
 }

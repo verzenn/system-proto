@@ -1,16 +1,15 @@
 {
-  system,
-  home,
   hosts,
   users,
+  modules,
   meta,
   inputs,
 }:
-inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+inputs.parts.lib.mkFlake {inherit inputs;} {
   inherit (meta) systems;
 
   _module.args = {
-    inherit system home hosts users meta inputs;
+    inherit hosts users modules meta inputs;
     inherit (inputs.nixpkgs) lib;
   };
 

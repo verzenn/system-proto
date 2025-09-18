@@ -6,15 +6,18 @@
   lib,
   ...
 }: {
-  imports = [
-    inputs.impermanence.nixosModules.default
-
-    ./${hostname}
-  ];
+  imports = with inputs;
+    [
+      disko.nixosModules.disko
+      impermanence.nixosModules.impermanence
+    ]
+    ++ [
+      ./${hostname}
+    ];
 
   environment.systemPackages = [
     pkgs.git
-    inputs.home-manager.packages.${host.system}.default
+    inputs.home-manager.packages.${host.system}.home-manager
   ];
 
   networking.hostName = hostname |> lib.mkDefault;
@@ -32,7 +35,7 @@
       root.initialPassword = "root" |> lib.mkDefault;
     };
 
-  environment.persistence."/persist" = {
+  environment.persistence."/nix/persist" = {
     hideMounts = true |> lib.mkDefault;
 
     directories = [

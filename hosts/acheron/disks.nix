@@ -7,8 +7,6 @@
   device = "/dev/disk/by-id/nvme-CT1000P2SSD8_2130E5BB2322";
   root = "${device}-part2";
 in {
-  imports = [inputs.disko.nixosModules.default];
-
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir -p /mnt
     mount "${root}" /mnt

@@ -1,6 +1,6 @@
 {
-  system,
   hosts,
+  modules,
   meta,
   inputs,
   lib,
@@ -15,7 +15,8 @@
           modules = [hosts];
 
           specialArgs = {
-            inherit system hostname host inputs;
+            inherit hostname host inputs;
+            modules = modules.system;
           };
         }
     );
