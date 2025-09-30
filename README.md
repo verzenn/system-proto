@@ -6,3 +6,11 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 ![alt](/verse_layer0.png)
 ## layer 1
 ![alt](/verse_layer1.png)
+
+# dream configuration
+- nixos
+- niri wm
+- quickshell shell/widgets
+- kitty or ghostty terminal?
+- kanata keyboard remapper
+- zen browser
