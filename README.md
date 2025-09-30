@@ -15,3 +15,6 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 - kitty
 - kanata keyboard remapper
 - zen browser
+
+# todos
+- look into kanata delays etc
