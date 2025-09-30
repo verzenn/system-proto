@@ -21,3 +21,4 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 - add simple quickshell app launcher, then column and workspace indicators with overview widgets
 - file explorer?
 - wallpaper daemon, swww?
+- shell prompt, starship?
