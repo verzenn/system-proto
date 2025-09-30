@@ -16,6 +16,7 @@
 
       "${modules}/apps/neovim"
       "${modules}/apps/kitty"
+      "${modules}/apps/zen"
       #"${modules}/apps/spotify"
       "${modules}/apps/discord"
     ];
