@@ -12,6 +12,6 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 - niri wm
 - zsh
 - quickshell shell/widgets
-- kitty or ghostty terminal?
+- kitty
 - kanata keyboard remapper
 - zen browser
