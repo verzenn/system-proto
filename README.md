@@ -19,3 +19,4 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 # todos
 - look into kanata delays etc
 - add simple quickshell app launcher, then column and workspace indicators with overview widgets
+- file explorer?
