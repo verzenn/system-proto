@@ -10,11 +10,11 @@ in {
     programs.zsh = {
       enable = true |> lib.mkForce;
 
-      profileExtra = lib.mkDefault ''
-        if [[ $(tty) == /dev/tty1 ]] && [[ -t 1 ]]; then
-          ${pkgs.niri-unstable}/bin/niri-session -l
-        fi
-      '';
+      #profileExtra = lib.mkDefault ''
+      #  if [[ $(tty) == /dev/tty1 ]] && [[ -t 1 ]]; then
+      #    ${pkgs.niri-unstable}/bin/niri-session -l
+      #  fi
+      #'';
     };
   };
 

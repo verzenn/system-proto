@@ -6,22 +6,21 @@
 }: {
   imports =
     [
-      #"${modules}/services/kanata"
+      "${modules}/services/kanata"
       #"${modules}/services/hyprpolkit"
 
-      #"${modules}/shell/zsh"
-      #"${modules}/shell/starship"
+      "${modules}/shell/zsh"
+      "${modules}/shell/starship"
 
-      #"${modules}/desktop/niri"
+      "${modules}/desktop/niri"
 
-      #"${modules}/apps/neovim"
-      #"${modules}/apps/kitty"
+      "${modules}/apps/neovim"
+      "${modules}/apps/kitty"
       #"${modules}/apps/spotify"
-      #"${modules}/apps/discord"
-    ]
-    ++ [
-      #./packages.nix
+      "${modules}/apps/discord"
     ];
+
+  home.packages = [pkgs.youtube-music pkgs.firefox];
 
   #fonts.fontconfig.enable = true;
 

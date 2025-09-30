@@ -7,7 +7,8 @@
   ...
 }: {
   flake.homeConfigurations =
-    lib.foldlAttrs
+    meta.hosts
+    |> lib.foldlAttrs
     (
       acc: hostname: host:
         acc
@@ -31,6 +32,5 @@
           )
         )
     )
-    {}
-    meta.hosts;
+    {};
 }

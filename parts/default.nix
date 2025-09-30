@@ -4,19 +4,23 @@
   modules,
   meta,
   inputs,
+  lib,
 }:
 inputs.parts.lib.mkFlake {inherit inputs;} {
-  inherit (meta) systems;
-
-  _module.args = {
-    inherit hosts users modules meta inputs;
-    inherit (inputs.nixpkgs) lib;
-  };
-
   imports = [
     ./configurations/nixos.nix
     ./configurations/home.nix
 
     ./tooling/formatter.nix
   ];
+
+  _module.args = {
+    inherit hosts users modules meta inputs lib;
+  };
+
+  systems =
+    meta.hosts
+    |> lib.attrValues
+    |> map (host: host.system)
+    |> lib.unique;
 }

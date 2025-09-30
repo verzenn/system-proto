@@ -1,6 +1,4 @@
 {
-  systems = ["x86_64-linux"];
-
   hosts = {
     "acheron" = {
       system = "x86_64-linux";

@@ -35,7 +35,7 @@ in {
         screenshot-path = null; # wont be using the built in screenshot tool
 
         spawn-at-startup = [
-          {command = ["${inputs.swww.packages.${host.system}.swww}/bin/swww-daemon" "-n" "workspace-background"];}
+          #{command = ["${inputs.swww.packages.${host.system}.swww}/bin/swww-daemon" "-n" "workspace-background"];}
           #{command = ["${inputs.swww.packages.${host.system}.swww}/bin/swww-daemon" "-n" "overview-background"];}
         ];
 

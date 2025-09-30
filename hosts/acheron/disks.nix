@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  # ls -l /dev/disk/by-id | grep <disk>
+  # ls -l /dev/disk/by-id | grep <disk-label>
   device = "/dev/disk/by-id/nvme-CT1000P2SSD8_2130E5BB2322";
   root = "${device}-part2";
 in {

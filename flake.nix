@@ -1,5 +1,4 @@
-{
-  inputs = {
+{ inputs = {
     swww = {
       url = "github:lgfae/swww";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,5 +70,7 @@
 
       meta = import ./meta.nix;
       inherit inputs;
+
+      inherit (inputs.nixpkgs) lib;
     };
 }
