@@ -10,6 +10,7 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 # dream configuration
 - nixos
 - niri wm
+- zsh
 - quickshell shell/widgets
 - kitty or ghostty terminal?
 - kanata keyboard remapper
