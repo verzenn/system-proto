@@ -8,13 +8,14 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 ![alt](/verse_layer1.png)
 
 # dream configuration
-- nixos
-- niri wm
-- zsh
-- quickshell shell/widgets
-- kitty
-- kanata keyboard remapper
-- zen browser
+- nixos - operating system
+- niri - window manager/compositor
+- zsh - shell
+- quickshell - gui shell/widgets
+- kitty - terminal emulator
+- kanata - keyboard remapper
+- zen browser - browser
+- swww - wallpaper daemon
 
 # todos
 - look into kanata delays etc
