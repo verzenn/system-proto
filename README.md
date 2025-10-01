@@ -23,3 +23,4 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 - file explorer?
 - swww daemon startup, service or niri startup
 - shell prompt, starship?
+- parallax scrolling wallpaper daemon? hyprlax
