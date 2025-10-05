@@ -1,4 +1,5 @@
-{ inputs = {
+{
+  inputs = {
     swww = {
       url = "github:lgfae/swww";
       inputs.nixpkgs.follows = "nixpkgs";

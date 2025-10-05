@@ -4,24 +4,28 @@
   pkgs,
   ...
 }: {
-  imports =
-    [
-      "${modules}/services/kanata"
-      #"${modules}/services/hyprpolkit"
+  imports = [
+    "${modules}/services/kanata"
+    #"${modules}/services/hyprpolkit"
 
-      "${modules}/shell/zsh"
-      "${modules}/shell/starship"
+    "${modules}/shell/zsh"
+    "${modules}/shell/starship"
 
-      "${modules}/desktop/niri"
+    "${modules}/desktop/niri"
 
-      "${modules}/apps/neovim"
-      "${modules}/apps/kitty"
-      "${modules}/apps/zen"
-      #"${modules}/apps/spotify"
-      "${modules}/apps/discord"
-    ];
+    "${modules}/apps/neovim"
+    "${modules}/apps/kitty"
+    "${modules}/apps/zen"
+    #"${modules}/apps/spotify"
+    "${modules}/apps/discord"
+  ];
 
-  home.packages = [pkgs.youtube-music pkgs.firefox];
+  home.packages = with pkgs; [
+    youtube-music
+    firefox
+  ];
+
+  services.swww.enable = true;
 
   #fonts.fontconfig.enable = true;
 

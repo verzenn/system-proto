@@ -142,7 +142,7 @@ in {
         ];
 
         overview = {
-          zoom = 0.5;
+          zoom = 0.65;
           workspace-shadow.enable = true;
         };
 

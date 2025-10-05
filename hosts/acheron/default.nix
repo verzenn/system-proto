@@ -28,6 +28,15 @@
       ./hardware.nix
     ];
 
+  virtualisation.docker = {
+    enable = false;
+
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   #fonts.fontconfig.enable = true;
   #services.upower.enable = true;
 
@@ -44,6 +53,8 @@
     # kanata
     "uinput"
     "input"
+
+    "docker"
 
     "wheel"
   ];
