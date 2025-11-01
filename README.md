@@ -3,7 +3,7 @@ uses kanata for the keyboard remaps, verse.json - contains the qmk keymap. impor
 screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 
 ## layer 0 (base)
-![alt](/verse_layer0.png)
+![alt](/layer1_new.png)
 ## layer 1
 ![alt](/verse_layer1.png)
 
