@@ -2,6 +2,7 @@
   inputs,
   modules,
   pkgs,
+  host,
   ...
 }: {
   imports = [
@@ -21,11 +22,18 @@
   ];
 
   home.packages = with pkgs; [
-    youtube-music
+    ytmdesktop
     firefox
+    vscodium
+    gemini-cli
+    quarto
+    kdePackages.qtdeclarative
+  ] ++ [
+    inputs.snixpkgs.legacyPackages.${host.system}.stremio
   ];
 
   services.swww.enable = true;
+  programs.quickshell.enable = true;
 
   #fonts.fontconfig.enable = true;
 

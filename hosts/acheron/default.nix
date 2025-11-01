@@ -8,8 +8,6 @@
   imports =
     [
       "${modules}/boot/grub"
-      #"${modules}/boot/plymouth"
-
       "${modules}/hardware/networkmanager"
       "${modules}/hardware/pipewire"
       #"${modules}/hardware/bluetooth"
@@ -36,6 +34,11 @@
       setSocketVariable = true;
     };
   };
+
+  networking.firewall.allowedTCPPorts = [
+      54321  # For Supabase
+      8081    # For Expo Metro
+    ];
 
   #fonts.fontconfig.enable = true;
   #services.upower.enable = true;

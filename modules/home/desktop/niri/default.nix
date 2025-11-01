@@ -113,7 +113,6 @@ in {
           "Mod+Alt+F".action = fullscreen-window;
           "Mod+R".action = switch-preset-column-width;
           "Mod+W".action = toggle-column-tabbed-display;
-          "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
 
           "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
           "Mod+Space".action = sh "qs ipc call appLauncher toggle";
