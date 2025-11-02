@@ -5,7 +5,7 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 ## layer 1
 ![alt](/layer1.png)
 ## layer 2
-![alt](/layer2.png)
+![alt](/layer2_fixed.png)
 
 # dream configuration
 - nixos - operating system
