@@ -12,7 +12,7 @@
     "${modules}/shell/zsh"
     "${modules}/shell/starship"
 
-    "${modules}/desktop/niri"
+    #"${modules}/desktop/niri" // for now we imperatively config for colors/matugen
 
     "${modules}/apps/neovim"
     "${modules}/apps/kitty"
@@ -28,6 +28,8 @@
     gemini-cli
     quarto
     kdePackages.qtdeclarative
+    matugen
+    ghostty
   ] ++ [
     inputs.snixpkgs.legacyPackages.${host.system}.stremio
   ];
@@ -77,4 +79,14 @@
 
   #programs.quickshell.enable = true;
   #programs.quickshell.systemd.enable = true;
+
+  # ranger
+  programs.ranger = {
+        enable = true;
+
+        settings = {
+                preview_images = true;
+                preview_images_method = "kitty";
+        };
+  };
 }

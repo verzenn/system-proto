@@ -28,7 +28,7 @@ in {
 
     programs.niri = {
       enable = host.cached;
-      package = pkgs.niri;
+      package = pkgs.niri-unstable;
     };
   };
 
