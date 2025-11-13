@@ -16,6 +16,8 @@ screenshot via qmk configurator, theme Metaverse, DOM node scale set to 3
 - kanata - keyboard remapper
 - zen browser - browser
 - swww - wallpaper daemon
+- neovim - IDE
+- ranger - file manager
 
 # todos
 - look into kanata delays etc
